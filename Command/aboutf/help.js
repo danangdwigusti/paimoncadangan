@@ -5,7 +5,7 @@ exports.run = (client, msg, args) => {
     const exampleEmbed = new MessageEmbed()
     .setColor('#1F1F1F')
     .setTitle("✨ Paimon's Feature ✨")
-    .setDescription("***Feature Information***\n> **Registration** \n> ***example***: `!reg` \n> \n> **Your Information**\n> ***example***: `!myinfo`\n> \n> **Music**\n> ***example***: `!music`\n\n***Game Information***\n> **Build Character** \n> ***example***: `!build amber`\n> \n> **Artifact Information**\n> ***example***: `!arti shimenawa`\n> \n> **Talent Farm Today**\n> ***example***: `!today talent`\n> \n> **Weapon Farm Today**\n> ***example***: `!today weapon`\n\n***About***\n> **About Server**\n> ***example***: `!about server`\n> \n> **Credit Paimon**\n> ***example***: `!credit`\n> \n> **Support Paimon**\n> ***example***: `!support`\n\n")
+    .setDescription("***Feature Information***\n> **Registration** \n> ***example***: `!reg` \n> \n> **Your Information**\n> ***example***: `!myinfo`\n> \n> **Music**\n> ***example***: `!music`\n\n***Game Information***\n> **Build Character** \n> ***example***: `!build amber`\n> \n> **Weapon Information**\n> ***example***: `!weapon amos`\n> \n> **Artifact Information**\n> ***example***: `!arti shimenawa`\n> \n> **Talent Farm Today**\n> ***example***: `!today talent`\n> \n> **Weapon Farm Today**\n> ***example***: `!today weapon`\n\n***About***\n> **About Server**\n> ***example***: `!about server`\n> \n> **Credit Paimon**\n> ***example***: `!credit`\n> \n> **Support Paimon**\n> ***example***: `!support`\n\n")
     .setThumbnail(msg.author.avatarURL())
     .setTimestamp()
     .setFooter({ text: 'Genshination',
