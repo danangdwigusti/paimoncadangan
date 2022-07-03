@@ -5,8 +5,20 @@ const { Player } = require("discord-player")
 const Userchm = require("./Command/informationf/profileSchema.js");
 const mongoose = require("mongoose");
 const Discord = require("discord.js");
-const client = new Discord.Client({intents: ["GUILDS", "GUILD_MEMBERS", "GUILD_VOICE_STATES", "GUILD_MESSAGES", ]});
- 
+const { Client, Intents } = require("discord.js");
+const { MessageActionRow, Modal, TextInputComponent } = require('discord.js');
+
+// Create a client with the intents and partials required.
+const client = new Client({
+  partials: ["MESSAGE", "REACTION"],
+  intents:
+    Intents.FLAGS.GUILD_MESSAGE_REACTIONS |
+    Intents.FLAGS.GUILD_MESSAGES |
+    Intents.FLAGS.GUILD_VOICE_STATES |
+    Intents.FLAGS.GUILD_MEMBERS |
+    Intents.FLAGS.GUILDS,
+});
+
 const fs = require("fs");
 //Prefix Folder About
 const prefixabout = "!";
@@ -27,13 +39,70 @@ client.on("ready", async ()=>{
     Channel.send("Paimon Telah Login").catch(e => console.log(e));
 
 
+// //Redeem Code Terbaru
+//     // Getting the channel from client.channels Collection.
+//     const Channel = client.channels.cache.get("992771472059793528");
+//     // Checking if the channel exists.
+//     if (!Channel) return console.error("Couldn't find the channel.");
+//     // Sending "!d bump" to the channel.
+//     const exampleEmbed = new MessageEmbed()
+//     .setImage('https://pbs.twimg.com/media/FWeRytoVUAEEHZa?format=jpg&name=medium')
+//     .addField(":gem: Live Stream Version 2.8 :gem:", "Halo @everyone, jangan sampai terlambat ya traveler\n> **#1**: `DTNVKAWBWSF5` \n> **#2**: `WANVJAFAXTER` \n> **#3**: `HA6C2AFBXSZV` \n Link Redeem : http://genshin.mihoyo.com/en/gift", true)
+//     .setTimestamp()
+//     .setFooter({ text: 'Genshination',
+//     iconURL: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-paimon-2/tray_large.png?41ad332a85dc0a0fbe8c0f922eae5097'});
+//     Channel.send({ embeds: [exampleEmbed] }).catch(e => console.log(e));
+
+
   console.log(` ---- ${client.user.tag} Sudah Login! ----`);
       client.user.setActivity("Zhongli got Prank", {
       type: "WATCHING",
       url: "https://www.twitch.tv/monstercat"
   });
 });
-process.on('warning', e => console.warn(e.stack));
+
+//Role adad
+
+client.on('messageReactionAdd', async(reaction, user) => {
+
+  if(reaction.message.partial) await reaction.message.fetch();
+
+  if(user.bot) return;
+  if(!reaction.message.guild) return;
+
+  if(reaction.message.id === '993239217591292014') {
+    if(reaction.emoji.name === 'mondstadt') {
+      await reaction.message.guild.members.cache.get(user.id).roles.add('993051834681921546')
+    } else if(reaction.emoji.name === 'liyue') {
+      await reaction.message.guild.members.cache.get(user.id).roles.add('993052156821262346')
+    } else if(reaction.emoji.name === 'inazuma') {
+      await reaction.message.guild.members.cache.get(user.id).roles.add('993052292167258132')
+    }
+}})
+
+// Deleten
+
+
+client.on('messageReactionRemove', async(reaction, user) => {
+
+  if(reaction.message.partial) await reaction.message.fetch();
+
+  if(user.bot) return;
+  if(!reaction.message.guild) return;
+
+  if(reaction.message.id === '993239217591292014') {
+    if(reaction.emoji.name === 'mondstadt') {
+      await reaction.message.guild.members.cache.get(user.id).roles.remove('993051834681921546')
+    } else if(reaction.emoji.name === 'liyue') {
+      await reaction.message.guild.members.cache.get(user.id).roles.remove('993052156821262346')
+    } else if(reaction.emoji.name === 'inazuma') {
+      await reaction.message.guild.members.cache.get(user.id).roles.remove('993052292167258132')
+    }
+  }
+})
+
+// Role Deletedd
+
 // ---- Folder About -----
 const commandsabout = fs.readdirSync("./Command/aboutf").filter(file => file.endsWith(".js"))
 for (file of commandsabout){
