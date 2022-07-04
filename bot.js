@@ -33,12 +33,12 @@ client.on("ready", async ()=>{
 
 // Paimon Login --------------------------------------------------------------------------------
 
-    // // Getting the channel from client.channels Collection.
-    // const Channel = client.channels.cache.get("987993929804812352");
-    // // Checking if the channel exists.
-    // if (!Channel) return console.error("Couldn't find the channel.");
-    // // Sending "!d bump" to the channel.
-    // Channel.send("Paimon Telah Login").catch(e => console.log(e));
+    // Getting the channel from client.channels Collection.
+    const Channel = client.channels.cache.get("987993929804812352");
+    // Checking if the channel exists.
+    if (!Channel) return console.error("Couldn't find the channel.");
+    // Sending "!d bump" to the channel.
+    Channel.send("Paimon Telah Login").catch(e => console.log(e));
 
 
 // //Redeem Code Terbaru --------------------------------------------------------------------------------
@@ -56,57 +56,57 @@ client.on("ready", async ()=>{
 //     Channel.send({ embeds: [exampleEmbed] }).catch(e => console.log(e));
 // -------------------------------------------------------------------------------------------------------
 
-// //Pesan Role--------------------------------------------------------------------------------
-    // Getting the channel from client.channels Collection.
-    const Channel = client.channels.cache.get("993238986791325816");
-    // Checking if the channel exists.
-    if (!Channel) return console.error("Couldn't find the channel.");
-    // Sending "!d bump" to the channel.
+// // //Pesan Role--------------------------------------------------------------------------------
+//     // Getting the channel from client.channels Collection.
+//     const Channel = client.channels.cache.get("993238986791325816");
+//     // Checking if the channel exists.
+//     if (!Channel) return console.error("Couldn't find the channel.");
+//     // Sending "!d bump" to the channel.
     
-//  ------------------------ Mondo --------------------------------------------------------
-    const mondstadtbtn = new MessageActionRow() //Mondo Button
-      .addComponents(
-        new MessageButton()
-          .setCustomId('mondbtn')
-          .setLabel('Pilih Region Mondstadt')
-          .setStyle('SECONDARY')
-          .setEmoji("<:mondstadt:993236678586138744>"),
-      )
-      const mondstadtembed = new MessageEmbed()
-      .addField("<:mondstadt:993236678586138744> Mondstadt <:mondstadt:993236678586138744>", "Mondstadt atau Moon City adalah salah satu negara di Teyvat, dan yang pertama bagi Traveler mulai mencari Saudara mereka. Kota ini mengikuti Barbatos, sang Anemo Archon.", true)
-      .setImage("https://media.giphy.com/media/amyXOlIeMFqmonYuoL/giphy.gif");
+// //  ------------------------ Mondo --------------------------------------------------------
+//     const mondstadtbtn = new MessageActionRow() //Mondo Button
+//       .addComponents(
+//         new MessageButton()
+//           .setCustomId('mondbtn')
+//           .setLabel('Pilih Region Mondstadt')
+//           .setStyle('SECONDARY')
+//           .setEmoji("<:mondstadt:993236678586138744>"),
+//       )
+//       const mondstadtembed = new MessageEmbed()
+//       .addField("<:mondstadt:993236678586138744> Mondstadt <:mondstadt:993236678586138744>", "Mondstadt atau Moon City adalah salah satu negara di Teyvat, dan yang pertama bagi Traveler mulai mencari Saudara mereka. Kota ini mengikuti Barbatos, sang Anemo Archon.", true)
+//       .setImage("https://media.giphy.com/media/amyXOlIeMFqmonYuoL/giphy.gif");
   
-    await Channel.send({embeds: [mondstadtembed], components: [mondstadtbtn] }).catch(e => console.log(e));
+//     await Channel.send({embeds: [mondstadtembed], components: [mondstadtbtn] }).catch(e => console.log(e));
 
-//  ------------------------ Liyue --------------------------------------------------------
-    const liyuebtn = new MessageActionRow() //Mondo Button
-      .addComponents(
-        new MessageButton()
-          .setCustomId('liyuebtn')
-          .setLabel('Pilih Region Liyue')
-          .setStyle('SECONDARY')
-          .setEmoji("<:liyue:993236675671097437>"),
-      )
-      const liyueembed = new MessageEmbed()
-      .addField("<:liyue:993236675671097437> Liyue <:liyue:993236675671097437>", "Liyue adalah kota pelabuhan yang dikelilingi pegunungan di ketiga sisinya, dan dikelilingi bukit dan ladang yang luas, dan juga terletak di dekat tambang yang penuh dengan bijih dan logam berharga.", true)
-      .setImage('https://media.giphy.com/media/ekZ5PYdFRlCjQ5GodS/giphy.gif');
+// //  ------------------------ Liyue --------------------------------------------------------
+//     const liyuebtn = new MessageActionRow() //Mondo Button
+//       .addComponents(
+//         new MessageButton()
+//           .setCustomId('liyuebtn')
+//           .setLabel('Pilih Region Liyue')
+//           .setStyle('SECONDARY')
+//           .setEmoji("<:liyue:993236675671097437>"),
+//       )
+//       const liyueembed = new MessageEmbed()
+//       .addField("<:liyue:993236675671097437> Liyue <:liyue:993236675671097437>", "Liyue adalah kota pelabuhan yang dikelilingi pegunungan di ketiga sisinya, dan dikelilingi bukit dan ladang yang luas, dan juga terletak di dekat tambang yang penuh dengan bijih dan logam berharga.", true)
+//       .setImage('https://media.giphy.com/media/ekZ5PYdFRlCjQ5GodS/giphy.gif');
   
-    await Channel.send({embeds: [liyueembed], components: [liyuebtn] }).catch(e => console.log(e));
+//     await Channel.send({embeds: [liyueembed], components: [liyuebtn] }).catch(e => console.log(e));
 
-//  ------------------------ Inazuma --------------------------------------------------------
-    const inazumabtn = new MessageActionRow() //Mondo Button
-      .addComponents(
-        new MessageButton()
-          .setCustomId('inazumabtn')
-          .setLabel('Pilih Region Inazuma')
-          .setStyle('SECONDARY')
-          .setEmoji("<:inazuma:993236681178234931>"),
-      )
-      const inazumaembed = new MessageEmbed()
-      .addField("<:inazuma:993236681178234931> Inazuma <:inazuma:993236681178234931>", "Inazuma adalah salah satu negara di Teyvat. Inazuma adalah negara kepulauan yang mengikuti Raiden Shogun, sang Electro Archon, yang juga kepala pemerintahan, Inazuma Shogunate.", true)
-      .setImage('https://media.giphy.com/media/XmoIoGXO3Q9971dLJJ/giphy.gif');
+// //  ------------------------ Inazuma --------------------------------------------------------
+//     const inazumabtn = new MessageActionRow() //Mondo Button
+//       .addComponents(
+//         new MessageButton()
+//           .setCustomId('inazumabtn')
+//           .setLabel('Pilih Region Inazuma')
+//           .setStyle('SECONDARY')
+//           .setEmoji("<:inazuma:993236681178234931>"),
+//       )
+//       const inazumaembed = new MessageEmbed()
+//       .addField("<:inazuma:993236681178234931> Inazuma <:inazuma:993236681178234931>", "Inazuma adalah salah satu negara di Teyvat. Inazuma adalah negara kepulauan yang mengikuti Raiden Shogun, sang Electro Archon, yang juga kepala pemerintahan, Inazuma Shogunate.", true)
+//       .setImage('https://media.giphy.com/media/XmoIoGXO3Q9971dLJJ/giphy.gif');
   
-    await Channel.send({embeds: [inazumaembed], components: [inazumabtn] }).catch(e => console.log(e));
+//     await Channel.send({embeds: [inazumaembed], components: [inazumabtn] }).catch(e => console.log(e));
 
  // ------------------------ Logika Role --------------------------------------------------------
 
