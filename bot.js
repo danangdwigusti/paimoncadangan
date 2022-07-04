@@ -6,7 +6,7 @@ const Userchm = require("./Command/informationf/profileSchema.js");
 const mongoose = require("mongoose");
 const Discord = require("discord.js");
 const { Client, Intents } = require("discord.js");
-const { MessageActionRow, Modal, TextInputComponent } = require('discord.js');
+const { MessageActionRow, MessageButton, Modal, TextInputComponent } = require('discord.js');
 
 // Create a client with the intents and partials required.
 const client = new Client({
@@ -31,6 +31,8 @@ client.commands = new Discord.Collection();
 
 client.on("ready", async ()=>{
 
+// Paimon Login --------------------------------------------------------------------------------
+
     // Getting the channel from client.channels Collection.
     const Channel = client.channels.cache.get("987993929804812352");
     // Checking if the channel exists.
@@ -39,7 +41,7 @@ client.on("ready", async ()=>{
     Channel.send("Paimon Telah Login").catch(e => console.log(e));
 
 
-// //Redeem Code Terbaru
+// //Redeem Code Terbaru --------------------------------------------------------------------------------
 //     // Getting the channel from client.channels Collection.
 //     const Channel = client.channels.cache.get("992771472059793528");
 //     // Checking if the channel exists.
@@ -47,12 +49,101 @@ client.on("ready", async ()=>{
 //     // Sending "!d bump" to the channel.
 //     const exampleEmbed = new MessageEmbed()
 //     .setImage('https://pbs.twimg.com/media/FWeRytoVUAEEHZa?format=jpg&name=medium')
-//     .addField(":gem: Live Stream Version 2.8 :gem:", "Halo @everyone, jangan sampai terlambat ya traveler\n> **#1**: `DTNVKAWBWSF5` \n> **#2**: `WANVJAFAXTER` \n> **#3**: `HA6C2AFBXSZV` \n Link Redeem : http://genshin.mihoyo.com/en/gift", true)
+//     .addField("<:primo:992787741689524244> Live Stream Version 2.8 <:primo:992787741689524244>", "Halo @everyone, jangan sampai terlambat ya traveler\n> **#1**: `DTNVKAWBWSF5` \n> **#2**: `WANVJAFAXTER` \n> **#3**: `HA6C2AFBXSZV` \n Link Redeem : http://genshin.mihoyo.com/en/gift", true)
 //     .setTimestamp()
 //     .setFooter({ text: 'Genshination',
 //     iconURL: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-paimon-2/tray_large.png?41ad332a85dc0a0fbe8c0f922eae5097'});
 //     Channel.send({ embeds: [exampleEmbed] }).catch(e => console.log(e));
+// -------------------------------------------------------------------------------------------------------
 
+// // //Pesan Role--------------------------------------------------------------------------------
+//     // Getting the channel from client.channels Collection.
+//     const Channel = client.channels.cache.get("993238986791325816");
+//     // Checking if the channel exists.
+//     if (!Channel) return console.error("Couldn't find the channel.");
+//     // Sending "!d bump" to the channel.
+    
+// //  ------------------------ Mondo --------------------------------------------------------
+//     const mondstadtbtn = new MessageActionRow() //Mondo Button
+//       .addComponents(
+//         new MessageButton()
+//           .setCustomId('mondbtn')
+//           .setLabel('Pilih Region Mondstadt')
+//           .setStyle('SECONDARY')
+//           .setEmoji("<:mondstadt:993236678586138744>"),
+//       )
+//       const mondstadtembed = new MessageEmbed()
+//       .addField("<:mondstadt:993236678586138744> Mondstadt <:mondstadt:993236678586138744>", "Mondstadt atau Moon City adalah salah satu negara di Teyvat, dan yang pertama bagi Traveler mulai mencari Saudara mereka. Kota ini mengikuti Barbatos, sang Anemo Archon.", true)
+//       .setImage("https://media.giphy.com/media/zTnuvU3AZfE7mPRKwt/giphy.gif");
+  
+//     await Channel.send({embeds: [mondstadtembed], components: [mondstadtbtn] }).catch(e => console.log(e));
+
+// //  ------------------------ Liyue --------------------------------------------------------
+//     const liyuebtn = new MessageActionRow() //Mondo Button
+//       .addComponents(
+//         new MessageButton()
+//           .setCustomId('liyuebtn')
+//           .setLabel('Pilih Region Liyue')
+//           .setStyle('SECONDARY')
+//           .setEmoji("<:liyue:993236675671097437>"),
+//       )
+//       const liyueembed = new MessageEmbed()
+//       .addField("<:liyue:993236675671097437> Liyue <:liyue:993236675671097437>", "Liyue adalah kota pelabuhan yang dikelilingi pegunungan di ketiga sisinya, dan dikelilingi bukit dan ladang yang luas, dan juga terletak di dekat tambang yang penuh dengan bijih dan logam berharga.", true)
+//       .setImage('https://media.giphy.com/media/ekZ5PYdFRlCjQ5GodS/giphy.gif');
+  
+//     await Channel.send({embeds: [liyueembed], components: [liyuebtn] }).catch(e => console.log(e));
+
+// //  ------------------------ Inazuma --------------------------------------------------------
+//     const inazumabtn = new MessageActionRow() //Mondo Button
+//       .addComponents(
+//         new MessageButton()
+//           .setCustomId('inazumabtn')
+//           .setLabel('Pilih Region Inazuma')
+//           .setStyle('SECONDARY')
+//           .setEmoji("<:inazuma:993236681178234931>"),
+//       )
+//       const inazumaembed = new MessageEmbed()
+//       .addField("<:inazuma:993236681178234931> Inazuma <:inazuma:993236681178234931>", "Inazuma adalah salah satu negara di Teyvat. Inazuma adalah negara kepulauan yang mengikuti Raiden Shogun, sang Electro Archon, yang juga kepala pemerintahan, Inazuma Shogunate.", true)
+//       .setImage('https://media.giphy.com/media/XmoIoGXO3Q9971dLJJ/giphy.gif');
+  
+//     await Channel.send({embeds: [inazumaembed], components: [inazumabtn] }).catch(e => console.log(e));
+
+//  ------------------------ Logika Role --------------------------------------------------------
+
+
+client.on('interactionCreate', async (interaction, user) => {
+  
+    if (!interaction.isButton()) return;
+
+    if (interaction.customId == "mondbtn") { //Mondo
+        const member = interaction.member;
+        console.log(member.roles.cache);
+        if (member.roles.cache.has('993051834681921546')) { // if they already have the role
+                member.roles.remove('993051834681921546'); // remove it
+                return interaction.deferUpdate()
+            } else { // if they don't have the role
+                member.roles.add('993051834681921546'); // add it
+                return interaction.deferUpdate()}
+    } else if (interaction.customId == "liyuebtn") { //Mondo
+        const member = interaction.member;
+        console.log(member.roles.cache);
+        if (member.roles.cache.has('993052156821262346')) { // if they already have the role
+                member.roles.remove('993052156821262346'); // remove it
+                return interaction.deferUpdate()
+            } else { // if they don't have the role
+                member.roles.add('993052156821262346'); // add it
+                return interaction.deferUpdate()}
+    } else if (interaction.customId == "inazumabtn") { //Mondo
+        const member = interaction.member;
+        console.log(member.roles.cache);
+        if (member.roles.cache.has('993052292167258132')) { // if they already have the role
+                member.roles.remove('993052292167258132'); // remove it
+                return interaction.deferUpdate()
+            } else { // if they don't have the role
+                member.roles.add('993052292167258132'); // add it
+                return interaction.deferUpdate()}
+    }
+});
 
   console.log(` ---- ${client.user.tag} Sudah Login! ----`);
       client.user.setActivity("Zhongli got Prank", {
@@ -60,46 +151,6 @@ client.on("ready", async ()=>{
       url: "https://www.twitch.tv/monstercat"
   });
 });
-
-//Role adad
-
-client.on('messageReactionAdd', async(reaction, user) => {
-
-  if(reaction.message.partial) await reaction.message.fetch();
-
-  if(user.bot) return;
-  if(!reaction.message.guild) return;
-
-  if(reaction.message.id === '993239217591292014') {
-    if(reaction.emoji.name === 'mondstadt') {
-      await reaction.message.guild.members.cache.get(user.id).roles.add('993051834681921546')
-    } else if(reaction.emoji.name === 'liyue') {
-      await reaction.message.guild.members.cache.get(user.id).roles.add('993052156821262346')
-    } else if(reaction.emoji.name === 'inazuma') {
-      await reaction.message.guild.members.cache.get(user.id).roles.add('993052292167258132')
-    }
-}})
-
-// Deleten
-
-
-client.on('messageReactionRemove', async(reaction, user) => {
-
-  if(reaction.message.partial) await reaction.message.fetch();
-
-  if(user.bot) return;
-  if(!reaction.message.guild) return;
-
-  if(reaction.message.id === '993239217591292014') {
-    if(reaction.emoji.name === 'mondstadt') {
-      await reaction.message.guild.members.cache.get(user.id).roles.remove('993051834681921546')
-    } else if(reaction.emoji.name === 'liyue') {
-      await reaction.message.guild.members.cache.get(user.id).roles.remove('993052156821262346')
-    } else if(reaction.emoji.name === 'inazuma') {
-      await reaction.message.guild.members.cache.get(user.id).roles.remove('993052292167258132')
-    }
-  }
-})
 
 // Role Deletedd
 
