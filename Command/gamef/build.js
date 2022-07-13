@@ -49,7 +49,7 @@ exports.run = (client, msg, args) => {
   else if (msg.content === "!build ayaka") { // AYAKA
     const exampleEmbed = new MessageEmbed()
     .addField("💫  Character Build 💫", "Paimon ready for `!help` >.<", true)
-    .setImage('https://drive.google.com/uc?id=10sMjnlUwLjym9VG5ZQSzbojwA78QGxg0')
+    .setImage('https://drive.google.com/uc?id=1xDnhnUcsBKTtnuLgoxfHVjIRSXIFxVa1')
     .setTimestamp()
     .setFooter({ text: 'Genshination',
     iconURL: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-paimon-2/tray_large.png?41ad332a85dc0a0fbe8c0f922eae5097'});
@@ -445,7 +445,7 @@ exports.run = (client, msg, args) => {
   else if (msg.content === "!build xingqiu") { // XINQIU
     const exampleEmbed = new MessageEmbed()
     .addField("💫  Character Build 💫", "Paimon ready for `!help` >.<", true)
-    .setImage('https://drive.google.com/uc?id=1kLTFhtVx4dLgnm2UvG--txAGgE2x8g3h')
+    .setImage('https://drive.google.com/uc?id=1tcEVDVyTXnH9NDvpI_VfIz5Swisfzp6T')
     .setTimestamp()
     .setFooter({ text: 'Genshination',
     iconURL: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-paimon-2/tray_large.png?41ad332a85dc0a0fbe8c0f922eae5097'});
