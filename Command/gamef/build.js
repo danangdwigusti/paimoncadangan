@@ -1,11 +1,19 @@
 const Discord = require("discord.js");
 const { MessageEmbed } = require('discord.js');
 exports.run = (client, msg, args) => {
-
+  
   if (msg.content === "!build albedo") { //albedo
     const exampleEmbed = new MessageEmbed()
     .addField("💫  Character Build 💫", "Paimon ready for `!help` >.<", true)
     .setImage('https://drive.google.com/uc?id=1KMSHvMqen-VFdXMU9FYFz8LjZrIiqbI3')
+    .setTimestamp()
+    .setFooter({ text: 'Genshination',
+    iconURL: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-paimon-2/tray_large.png?41ad332a85dc0a0fbe8c0f922eae5097'});
+  msg.reply({ embeds: [exampleEmbed] });
+  } else if (msg.content === "!build heizou") { //heizou
+    const exampleEmbed = new MessageEmbed()
+    .addField("💫  Character Build 💫", "Paimon ready for `!help` >.<", true)
+    .setImage('https://drive.google.com/uc?id=1S3PHVS4KzGJU0JM5jQ_m_OQ048YPSJ-q')
     .setTimestamp()
     .setFooter({ text: 'Genshination',
     iconURL: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-paimon-2/tray_large.png?41ad332a85dc0a0fbe8c0f922eae5097'});
