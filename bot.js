@@ -48,20 +48,36 @@ client.on("ready", async ()=>{
 //     if (!Channel) return console.error("Couldn't find the channel.");
 //     // Sending "!d bump" to the channel.
 //     const exampleEmbed = new MessageEmbed()
-//     .setImage('https://pbs.twimg.com/media/FWeRytoVUAEEHZa?format=jpg&name=medium')
-//     .addField("<:primo:992787741689524244> Live Stream Version 2.8 <:primo:992787741689524244>", "Halo @everyone, jangan sampai terlambat ya traveler\n> **#1**: `DTNVKAWBWSF5` \n> **#2**: `WANVJAFAXTER` \n> **#3**: `HA6C2AFBXSZV` \n Link Redeem : http://genshin.mihoyo.com/en/gift", true)
+//     .setImage('https://pbs.twimg.com/media/FZ2ZspjUEAAIISt?format=jpg&name=medium')
+//     .addField("<:primo:992787741689524244> Live Stream Version 3.0 <:primo:992787741689524244>", "Halo @everyone, jangan sampai terlambat ya traveler\n> **#1**: `8ANCKTWYVRD5` \n> **#2**: `EA7VKTFHU9VR` \n> **#3**: `KT7DKSFGCRWD` \n Link Redeem : http://genshin.mihoyo.com/en/gift", true)
 //     .setTimestamp()
 //     .setFooter({ text: 'Genshination',
 //     iconURL: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-paimon-2/tray_large.png?41ad332a85dc0a0fbe8c0f922eae5097'});
 //     Channel.send({ embeds: [exampleEmbed] }).catch(e => console.log(e));
-// -------------------------------------------------------------------------------------------------------
+// // -------------------------------------------------------------------------------------------------------
 
-// // //Pesan Role--------------------------------------------------------------------------------
+// //Event --------------------------------------------------------------------------------
 //     // Getting the channel from client.channels Collection.
-//     const Channel = client.channels.cache.get("993238986791325816");
+//     const Channel = client.channels.cache.get("994670302053269525");
 //     // Checking if the channel exists.
 //     if (!Channel) return console.error("Couldn't find the channel.");
 //     // Sending "!d bump" to the channel.
+//     const exampleEmbed = new MessageEmbed()
+//     .setImage('https://upload-os-bbs.hoyolab.com/upload/2022/07/21/1015537/ed51afe0a53ba2f50b3ae72b415452ab_6568724448433978376.jpg?x-oss-process=image/resize,s_740/quality,q_80/auto-orient,0/interlace,1/format,jpg')
+//     .addField("<:primo:992787741689524244> Web Event : Bouncing Blobby Slimes <:primo:992787741689524244>", "Halo @everyone, jangan sampai ketinggalan ya traveler, lumayan loh primonya hihihi :info:\n\n **Batas Waktu: July 22, 2022 09:00 – July 31, 2022 23:59**\n\n Link: https://act.hoyoverse.com/ys/event/e20220517-jump-eola/index.html?game_biz=hk4e_global&mhy_presentation_style=fullscreen&mhy_auth_required=true&mhy_landscape=true&mhy_hide_status_bar=true&utm_source=hoyolab&utm_medium=post", true)
+//     .setTimestamp()
+//     .setFooter({ text: 'Genshination',
+//     iconURL: 'https://s3.getstickerpack.com/storage/uploads/sticker-pack/genshin-impact-paimon-2/tray_large.png?41ad332a85dc0a0fbe8c0f922eae5097'});
+//     Channel.send({ embeds: [exampleEmbed] }).catch(e => console.log(e));
+// // -------------------------------------------------------------------------------------------------------
+
+
+// //Pesan Role--------------------------------------------------------------------------------
+    // // Getting the channel from client.channels Collection.
+    // const Channel = client.channels.cache.get("993238986791325816");
+    // // Checking if the channel exists.
+    // if (!Channel) return console.error("Couldn't find the channel.");
+    // // Sending "!d bump" to the channel.
     
 // //  ------------------------ Mondo --------------------------------------------------------
 //     const mondstadtbtn = new MessageActionRow() //Mondo Button
@@ -109,19 +125,19 @@ client.on("ready", async ()=>{
 //     await Channel.send({embeds: [inazumaembed], components: [inazumabtn] }).catch(e => console.log(e));
 
 //  ------------------------ Sumeru --------------------------------------------------------
-//     const sumerubtn = new MessageActionRow() //Sumeru Button
-//       .addComponents(
-//         new MessageButton()
-//           .setCustomId('sumerubtn')
-//           .setLabel('Pilih Region Sumeru')
-//           .setStyle('SECONDARY')
-//           .setEmoji("<:sumeru:1011902423922638879>"),
-//       )
-//       const inazumaembed = new MessageEmbed()
-//       .addField("<:sumeru:1011902423922638879> Sumeru <:sumeru:1011902423922638879>", "Sumeru adalah wilayah yang memuja Dewa Kebijaksanaan, Dewa Kecil Kusanali. Sampai sekarang, aura tak menyenangkan tetap ada di dalamnya dan saat ini merupakan tempat yang berbahaya.", true)
-//       .setImage('https://media1.giphy.com/media/LBTI7IbtblzStDaQEA/giphy.gif?cid=790b761158a8de5595326681ba7c5b7a5ba73b5613b51635&rid=giphy.gif&ct=g');
+    // const sumerubtn = new MessageActionRow() //Sumeru Button
+    //   .addComponents(
+    //     new MessageButton()
+    //       .setCustomId('sumerubtn')
+    //       .setLabel('Pilih Region Sumeru')
+    //       .setStyle('SECONDARY')
+    //       .setEmoji("<:sumeru:1011902423922638879>"),
+    //   )
+    //   const sumeruembed = new MessageEmbed()
+    //   .addField("<:sumeru:1011902423922638879> Sumeru <:sumeru:1011902423922638879>", "Sumeru adalah wilayah yang memuja Dewa Kebijaksanaan, Dewa Kecil Kusanali. Sampai sekarang, aura tak menyenangkan tetap ada di dalamnya dan saat ini merupakan tempat yang berbahaya.", true)
+    //   .setImage('https://media1.giphy.com/media/LBTI7IbtblzStDaQEA/giphy.gif?cid=790b761158a8de5595326681ba7c5b7a5ba73b5613b51635&rid=giphy.gif&ct=g');
   
-//     await Channel.send({embeds: [sumeruembed], components: [sumerubtn] }).catch(e => console.log(e));
+    // await Channel.send({embeds: [sumeruembed], components: [sumerubtn] }).catch(e => console.log(e));
 
  // ------------------------ Logika Role --------------------------------------------------------
 
