@@ -8,6 +8,7 @@ const Discord = require("discord.js");
 const { Client, Intents } = require("discord.js");
 const { MessageActionRow, MessageButton, Modal, TextInputComponent } = require('discord.js');
 
+
 // Create a client with the intents and partials required.
 const client = new Client({
   partials: ["MESSAGE", "REACTION"],
