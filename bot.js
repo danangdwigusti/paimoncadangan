@@ -108,6 +108,21 @@ client.on("ready", async ()=>{
   
 //     await Channel.send({embeds: [inazumaembed], components: [inazumabtn] }).catch(e => console.log(e));
 
+//  ------------------------ Sumeru --------------------------------------------------------
+//     const sumerubtn = new MessageActionRow() //Sumeru Button
+//       .addComponents(
+//         new MessageButton()
+//           .setCustomId('sumerubtn')
+//           .setLabel('Pilih Region Sumeru')
+//           .setStyle('SECONDARY')
+//           .setEmoji("<:sumeru:1011902423922638879>"),
+//       )
+//       const inazumaembed = new MessageEmbed()
+//       .addField("<:sumeru:1011902423922638879> Sumeru <:sumeru:1011902423922638879>", "Sumeru adalah wilayah yang memuja Dewa Kebijaksanaan, Dewa Kecil Kusanali. Sampai sekarang, aura tak menyenangkan tetap ada di dalamnya dan saat ini merupakan tempat yang berbahaya.", true)
+//       .setImage('https://media1.giphy.com/media/LBTI7IbtblzStDaQEA/giphy.gif?cid=790b761158a8de5595326681ba7c5b7a5ba73b5613b51635&rid=giphy.gif&ct=g');
+  
+//     await Channel.send({embeds: [sumeruembed], components: [sumerubtn] }).catch(e => console.log(e));
+
  // ------------------------ Logika Role --------------------------------------------------------
 
 
@@ -141,6 +156,15 @@ client.on('interactionCreate', async (interaction, user) => {
                 return interaction.deferUpdate()
             } else { // if they don't have the role
                 member.roles.add('993052292167258132'); // add it
+                return interaction.deferUpdate()}
+    } else if (interaction.customId == "sumerubtn") { //Mondo
+        const member = interaction.member;
+        console.log(member.roles.cache);
+        if (member.roles.cache.has('993053552811442237')) { // if they already have the role
+                member.roles.remove('993053552811442237'); // remove it
+                return interaction.deferUpdate()
+            } else { // if they don't have the role
+                member.roles.add('993053552811442237'); // add it
                 return interaction.deferUpdate()}
     }
 });
