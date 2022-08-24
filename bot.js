@@ -142,6 +142,15 @@ client.on('interactionCreate', async (interaction, user) => {
             } else { // if they don't have the role
                 member.roles.add('993052292167258132'); // add it
                 return interaction.deferUpdate()}
+    } else if (interaction.customId == "sumerubtn") { //Mondo
+        const member = interaction.member;
+        console.log(member.roles.cache);
+        if (member.roles.cache.has('993053552811442237')) { // if they already have the role
+                member.roles.remove('993053552811442237'); // remove it
+                return interaction.deferUpdate()
+            } else { // if they don't have the role
+                member.roles.add('993053552811442237'); // add it
+                return interaction.deferUpdate()}
     }
 });
 
